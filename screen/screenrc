@@ -1,0 +1,15 @@
+#hardstatus alwayslastline "%= %3n %t%? [%h]%? %="
+#caption always "%= %-w%L>%{= BW}%n*%t%{-}%52<%+w %L="
+startup_message off
+encoding UTF-8
+attrcolor b ".I"
+defbce "on"
+vbell off
+startup_message off
+defscrollback 5000
+sorendition dY
+hardstatus alwayslastline
+hardstatus string '%{= dW}%-Lw%{= dY}%50> %n*%f %t%{= dW}%+Lw%< %{= dW}%-=%D %m/%d/%y %C %A %1`%{-}'
+termcap xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+terminfo xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+shell -$SHELL
