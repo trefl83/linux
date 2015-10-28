@@ -1,0 +1,5 @@
+# restart network
+sudo /etc/init.d/networking restart
+
+# update flash
+sudo update-flashplugin-nonfree --install
