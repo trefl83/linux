@@ -9,7 +9,7 @@ no_buffers yes
 
 # Window specifications #
 gap_x 50
-gap_y 30
+gap_y 15
 minimum_size 268 620 # 220 5
 maximum_width 268 # 220
 own_window yes
@@ -55,28 +55,31 @@ cpu_avg_samples 2
 
 # variables http://conky.sourceforge.net/variables.html
 TEXT
-${color white}SYSTEM ${hr 1}${color}
+${color white}SYSTEM INFO ${hr 1}${color}
 
 Hostname: $alignr$nodename
 Kernel: $alignr$kernel
-Uptime: $alignr$uptime
+Uptime: $alignr$uptime_short
+Load: ${alignr}1m:${loadavg 1}   5m:${loadavg 2}   15m:${loadavg 3}
 MB Temperature: ${alignr}${acpitemp}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
-CPU Temperature 0: ${alignr}${hwmon 1 temp 2}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
-CPU Temperature 1: ${alignr}${hwmon 1 temp 3}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
 # Fan: ${alignr}${hwmon 1 fan 1} RPM
 # Battery: ${alignr}${battery_percent BAT0}%
-CPU: ${alignr}${freq} MHz
-Processes: ${alignr}$processes ($running_processes running)
-Load: ${alignr}$loadavg
 
-CPU1 ${alignr}${cpu cpu1}%
+${color white}CPU ${hr 1}${color}
+
+CPU Temperature 0: ${alignr}${hwmon 1 temp 2}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+CPU Temperature 1: ${alignr}${hwmon 1 temp 3}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+
+CPU1 ${alignr}${freq 1}MHz   ${cpu cpu1}%
 ${cpubar 4 cpu1}
-CPU2 ${alignr}${cpu cpu2}%
+CPU2 ${alignr}${freq 2}MHz   ${cpu cpu2}%
 ${cpubar 4 cpu2}
-CPU3 ${alignr}${cpu cpu3}%
+CPU3 ${alignr}${freq 3}MHz   ${cpu cpu3}%
 ${cpubar 4 cpu3}
-CPU4 ${alignr}${cpu cpu4}%
+CPU4 ${alignr}${freq 4}MHz   ${cpu cpu4}%
 ${cpubar 4 cpu4}
+
+${color white}MEMORY ${hr 1}${color}
 
 RAM ${alignr}$mem / $memmax ($memperc%)
 ${membar 4}
@@ -84,6 +87,8 @@ SWAP ${alignr}$swap / $swapmax ($swapperc%)
 ${swapbar 4}
 
 ${color white}PROCESSES ${hr 1}${color}
+
+Processes: ${alignr}$processes ($running_processes running)
 
 Highest CPU $alignr CPU% MEM%
 ${top name 1}$alignr${top cpu 1}${top mem 1}
