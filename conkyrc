@@ -115,7 +115,7 @@ ${fs_bar 4 /backup}
 
 ${color white}NETWORK ${hr 1}${color}
 
-Wlan0: ${addr wlan0}
+Wlan0: ${alignr}${addr wlan0}
 Signal: ${alignr}${wireless_link_qual wlan0}%
 Down ${downspeed wlan0} k/s ${alignr}Up ${upspeed wlan0} k/s
 ${downspeedgraph wlan0 25,107} ${alignr}${upspeedgraph wlan0 25,107}
