@@ -3,3 +3,6 @@ sudo /etc/init.d/networking restart
 
 # update flash
 sudo update-flashplugin-nonfree --install
+
+# list of audio devices
+aplay -l

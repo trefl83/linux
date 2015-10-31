@@ -1,0 +1,117 @@
+# config http://conky.sourceforge.net/config_settings.html
+
+# Conky settings #
+background no
+update_interval 5.0
+double_buffer yes
+no_buffers yes
+# imlib_cache_size 10
+
+# Window specifications #
+gap_x 50
+gap_y 30
+minimum_size 268 620 # 220 5
+maximum_width 268 # 220
+own_window yes
+own_window_type normal # other options are override/dock/desktop/panel
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+# own_windiw_class conky
+# border_inner_margin 0
+# border_outer_margin 0
+alignment middle_right
+own_window_argb_visual true # yes
+# own_window_argb_value 0
+
+# Graphics settings #
+draw_shades no # yes
+default_shade_color black # AAAAAA
+draw_outline no
+default_outline_color green # AAAAAA
+draw_borders no
+draw_graph_borders yes # no
+# default_graph_size 26 80
+# show_graph_scale no
+# show_graph_range no
+
+# Text settings #
+use_xft yes
+xftalpha 0.9 # 0
+xftfont Droid Sans:size=9
+# text_buffer_size 256
+override_utf8_locale no
+# font Sans:size=8
+uppercase no
+# default_color CDE0E7
+
+# Useful shortenings #
+short_units yes
+pad_percents 2
+top_name_width 7
+
+# Other
+total_run_times 0
+cpu_avg_samples 2
+
+# variables http://conky.sourceforge.net/variables.html
+TEXT
+${color white}SYSTEM ${hr 1}${color}
+
+Hostname: $alignr$nodename
+Kernel: $alignr$kernel
+Uptime: $alignr$uptime
+MB Temperature: ${alignr}${acpitemp}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+CPU Temperature 0: ${alignr}${hwmon 1 temp 2}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+CPU Temperature 1: ${alignr}${hwmon 1 temp 3}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+# Fan: ${alignr}${hwmon 1 fan 1} RPM
+# Battery: ${alignr}${battery_percent BAT0}%
+CPU: ${alignr}${freq} MHz
+Processes: ${alignr}$processes ($running_processes running)
+Load: ${alignr}$loadavg
+
+CPU1 ${alignr}${cpu cpu1}%
+${cpubar 4 cpu1}
+CPU2 ${alignr}${cpu cpu2}%
+${cpubar 4 cpu2}
+CPU3 ${alignr}${cpu cpu3}%
+${cpubar 4 cpu3}
+CPU4 ${alignr}${cpu cpu4}%
+${cpubar 4 cpu4}
+
+RAM ${alignr}$mem / $memmax ($memperc%)
+${membar 4}
+SWAP ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 4}
+
+${color white}PROCESSES ${hr 1}${color}
+
+Highest CPU $alignr CPU% MEM%
+${top name 1}$alignr${top cpu 1}${top mem 1}
+${top name 2}$alignr${top cpu 2}${top mem 2}
+${top name 3}$alignr${top cpu 3}${top mem 3}
+${top name 4}$alignr${top cpu 4}${top mem 4}
+${top name 5}$alignr${top cpu 5}${top mem 5}
+
+Highest MEM $alignr CPU% MEM%
+${top_mem name 1}$alignr${top_mem cpu 1}${top_mem mem 1}
+${top_mem name 2}$alignr${top_mem cpu 2}${top_mem mem 2}
+${top_mem name 3}$alignr${top_mem cpu 3}${top_mem mem 3}
+${top_mem name 4}$alignr${top_mem cpu 4}${top_mem mem 4}
+${top_mem name 5}$alignr${top_mem cpu 5}${top_mem mem 5}
+
+${color white}FILESYSTEM ${hr 1}${color}
+
+Root: ${alignr}${fs_used /} / ${fs_size /}
+${fs_bar 4 /}
+Home: ${alignr}${fs_used /home} / ${fs_size /home}
+${fs_bar 4 /home}
+Backup: ${alignr}${fs_used /backup} / ${fs_size /backup}
+${fs_bar 4 /backup}
+
+${color white}NETWORK ${hr 1}${color}
+
+Wlan0: ${addr wlan0}
+Signal: ${alignr}${wireless_link_qual wlan0}%
+Down ${downspeed wlan0} k/s ${alignr}Up ${upspeed wlan0} k/s
+${downspeedgraph wlan0 25,107} ${alignr}${upspeedgraph wlan0 25,107}
+Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
