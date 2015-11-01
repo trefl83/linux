@@ -1,2 +1,12 @@
+execute pathogen#infect()
 syntax on
-au BufNewFile,BufRead *.hql setf sql
+filetype plugin indent on
+set number
+if has('gui_running')
+	set background=dark
+	colorscheme solarized
+	set lines=35
+	set columns=110
+else
+	colorscheme zellner
+endif
