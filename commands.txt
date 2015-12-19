@@ -6,3 +6,9 @@ sudo update-flashplugin-nonfree --install
 
 # list of audio devices
 aplay -l
+
+# user uid and gid
+id
+
+# mount disk with user rights
+sudo mount -o uid=1000,gid=1000 /dev/sdb1 /media/pen/
