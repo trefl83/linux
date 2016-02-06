@@ -247,7 +247,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master mute
 
 # Set wallpaper
-exec_always feh --bg-scale /home/luk/Pictures/wallpaper.jpg
+exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 
 # Run apps on startup
 # to check class run xprop and click window
@@ -256,6 +256,11 @@ assign [class="Iceweasel"] $workspace1
 exec gnome-terminal
 assign [class="Gnome-terminal"] $workspace2
 exec compton # for transparency in rofi
+exec --no-startup-id dunst # notification deamon
+# exec --no-startup-id dropbox start
 # assign [class="Spotify"] $workspace10
 # Floating
 # for_window [class="pass.kdbx - KeePass"] floating enable
+
+# disable annoying sounds
+exec xset b off
