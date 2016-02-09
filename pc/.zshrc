@@ -1,7 +1,12 @@
+# first install oh-my-zsh from https://github.com/robbyrussell/oh-my-zsh
+# via sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/luk/.oh-my-zsh
 
 # enable powerline
+# to install powerline run 'sudo pip install powerline-status'
+# check first part of path below by 'pip show powerline-status'
 . /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
 
 # Set name of the theme to load.
