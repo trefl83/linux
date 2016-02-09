@@ -2,13 +2,21 @@ execute pathogen#infect()
 syntax on
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set number
+colorscheme solarized
+
+" powerline setup
+set laststatus=2
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set t_Co=256
+
 if has('gui_running')
     set background=dark
-    colorscheme solarized
     set lines=35
     set columns=110
-else
-    colorscheme delek
+    set guifont=Menlo\ for\ Powerline\ 11
+    set guicursor+=a:blinkon0
 endif
 
 " addons:

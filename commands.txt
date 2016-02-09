@@ -21,3 +21,6 @@ fc-cache -vf ~/.fonts/
 
 # refresh xrdb
 xrdb ~/.Xresources
+
+# change shell
+chsh -s /bin/zsh
