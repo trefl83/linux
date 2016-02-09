@@ -1,4 +1,3 @@
-cat >> ~/.Xresources << EOF
 
 ! xterm ----------------------------------------------------------------------
 
@@ -18,4 +17,3 @@ xterm*multiScroll:        true
 xterm*toolBar:            false
 xterm*visualBell:         true
 
-EOF

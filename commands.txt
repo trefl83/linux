@@ -15,3 +15,9 @@ sudo mount -o uid=1000,gid=1000 /dev/sdb1 /media/pen/
 
 # mount iso
 sudo mount -o loop image.iso /media/pen/
+
+# refresh font cache
+fc-cache -vf ~/.fonts/
+
+# refresh xrdb
+xrdb ~/.Xresources
