@@ -10,7 +10,8 @@ URxvt.url-launcher:                   /usr/bin/firefox
 URxvt.matcher.button:                 1
 
 !! fonts
-URxvt.font:                           xft:Menlo for Powerline:style=Regular:pixelsize=15
+URxvt.font:                           xft:Hack-Regular:size=12
+
 
 !! solarized colorscheme http://ethanschoonover.com/solarized
 
@@ -32,6 +33,10 @@ URxvt.font:                           xft:Menlo for Powerline:style=Regular:pixe
 !!blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
 !!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
 !!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
+
+!! light version
+!! changed 8 first definitions
+!! eg. ...03 -> ...3, ...3 -> ...03
 
 #define S_base3        #002b36
 #define S_base2        #073642

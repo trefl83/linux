@@ -254,7 +254,7 @@ exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 #exec iceweasel
 assign [class="Iceweasel"] $workspace1
 exec gnome-terminal
-assign [class="Gnome-terminal"] $workspace2
+assign [class="URxvt"] $workspace2
 exec compton # for transparency in rofi
 exec --no-startup-id dunst # notification daemon
 # exec --no-startup-id dropbox start
