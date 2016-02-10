@@ -1,0 +1,22 @@
+# 
+
+# deb cdrom:[Debian GNU/Linux 8.1.0 _Jessie_ - Official i386 NETINST Binary-1 20150606-12:58]/ jessie main
+
+#deb cdrom:[Debian GNU/Linux 8.1.0 _Jessie_ - Official i386 NETINST Binary-1 20150606-12:58]/ jessie main
+
+deb http://ftp.pl.debian.org/debian/ jessie main non-free contrib
+deb-src http://ftp.pl.debian.org/debian/ jessie main non-free contrib
+
+deb http://security.debian.org/ jessie/updates main contrib non-free
+deb-src http://security.debian.org/ jessie/updates main contrib non-free
+
+# jessie-updates, previously known as 'volatile'
+deb http://ftp.pl.debian.org/debian/ jessie-updates main contrib non-free
+deb-src http://ftp.pl.debian.org/debian/ jessie-updates main contrib non-free
+
+# backport of R 3.2.2 to jessie
+deb http://r.meteo.uni.wroc.pl/bin/linux/debian jessie-cran3/
+
+# gtk arc theme
+# https://github.com/horst3180/arc-theme
+deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /
