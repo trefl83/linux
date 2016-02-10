@@ -1,0 +1,10 @@
+proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p1  /boot           vfat    defaults          0       2
+/dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
+# a swapfile is not a swap partition, so no using swapon|off from here on, use  dphys-swapfile swap[on|off]  for that
+
+# montowanie Lifestudio
+#UUID=9012299E12298A74    /media/Lifestudio    ntfs-3g    defaults    0    0
+
+# montowanie touro
+UUID=925b30cc-c919-475e-8f1d-4a9b45801795	/media/touro	ext4	defaults	0	0
