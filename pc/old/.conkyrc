@@ -1,8 +1,4 @@
-#
 # config http://conky.sourceforge.net/config_settings.html
-# setup:
-# sudo apt-get install lm-sensors
-# sudo sensors-detect
 
 # Conky settings #
 background no
@@ -43,7 +39,7 @@ use_xft yes
 xftalpha 0.9 # 0
 xftfont Droid Sans:size=9
 # text_buffer_size 256
-override_utf8_locale yes
+override_utf8_locale no
 # font Sans:size=8
 uppercase no
 # default_color CDE0E7
@@ -65,14 +61,14 @@ Hostname: $alignr$nodename
 Kernel: $alignr$kernel
 Uptime: $alignr$uptime_short
 Load: ${alignr}1m:${loadavg 1}   5m:${loadavg 2}   15m:${loadavg 3}
-MB Temperature: ${alignr}${acpitemp}°C
+MB Temperature: ${alignr}${acpitemp}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
 # Fan: ${alignr}${hwmon 1 fan 1} RPM
 # Battery: ${alignr}${battery_percent BAT0}%
 
 ${color white}CPU ${hr 1}${color}
 
-CPU Temperature 0: ${alignr}${hwmon 1 temp 2}°C
-CPU Temperature 1: ${alignr}${hwmon 1 temp 3}°C
+CPU Temperature 0: ${alignr}${hwmon 1 temp 2}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+CPU Temperature 1: ${alignr}${hwmon 1 temp 3}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
 
 CPU1 ${alignr}${freq_g 1}GHz   (${cpu cpu1}%)
 ${cpubar 4 cpu1}

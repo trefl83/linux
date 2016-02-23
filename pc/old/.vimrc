@@ -1,9 +1,8 @@
 execute pathogen#infect()
 syntax on
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-set backspace=2 " make backspace work like most other apps
 set number
-set background=dark
+backgroud=dark
 colorscheme solarized
 
 " powerline setup
@@ -14,6 +13,7 @@ python del powerline_setup
 set t_Co=256
 
 if has('gui_running')
+    set background=dark
     set lines=35
     set columns=110
     set guifont=Menlo\ for\ Powerline\ 11
