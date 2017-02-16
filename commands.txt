@@ -24,3 +24,6 @@ xrdb ~/.Xresources
 
 # change shell
 chsh -s /bin/zsh
+
+# disable gnome extensions version validatation
+gsettings set org.gnome.shell disable-extension-version-validation "true"
