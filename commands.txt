@@ -27,3 +27,6 @@ chsh -s /bin/zsh
 
 # disable gnome extensions version validatation
 gsettings set org.gnome.shell disable-extension-version-validation "true"
+
+# monthly transfer monitor using vnstat
+vnstati -m -i wlan0 -o vnstat.png
