@@ -1,0 +1,65 @@
+##########################################
+# create encrypted disk
+##########################################
+
+# unmount disk
+
+umount /dev/sd?X
+
+# encrypt disk
+
+cryptsetup -y -v luksFormat /dev/sd?X
+
+# open disk
+# dm_name is device mapper name
+
+cryptsetup luksOpen /dev/sd?X dm_name
+
+# create partition
+
+mkfs.ext4 /dev/mapper/dm_name
+
+# mount partition
+
+mount /dev/mapper/dm_name mount_point
+
+# close disk
+
+cryptsetup close dm_name
+
+##########################################
+# automount on start
+##########################################
+
+# create random keyfile
+
+dd if=/dev/urandom of=/root/keyfile bs=1024 count=4
+
+# read only to root
+
+chmod 0400 /root/keyfile
+
+# add key to LUKS
+
+cryptsetup luksAddKey /dev/sd?X /root/keyfile
+
+# create a mapper
+
+vim /etc/crypttab
+# dm_name    UUID=my-UUID    /root/keyfile    luks
+
+# add entry to fstab
+
+vim /etc/fstab
+# /dev/mapper/dm_name    mount_point    ext4    defaults    0    2
+
+# chown mount_point
+
+chown user:group mount_point
+
+##########################################
+# other
+##########################################
+
+# managing luks keys
+http://www.thegeekstuff.com/2016/03/cryptsetup-lukskey
