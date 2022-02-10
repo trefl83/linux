@@ -1,0 +1,17 @@
+# step by step instructions on how to setup rpi print servier with hp laser jet p1006
+
+1. prepare sd card with rasbian lite (debian 11.2)
+2. sudo raspi-config to set-up keyboard localization
+3. sudo raspi-config to set-up wifi connection
+4. sudo raspi-config to enable waiting for network on boot
+5. sudo raspi-config to enable ssh access
+6. configure router to assing static ip address
+7. sudo apt install cups
+8. allow pi user to use the printer 'sudo usermod -a -G lpadmin pi'
+9. configure CUPS so that it is accessible across the network 'sudo cupsctl --remote-any'
+10. don't try to install printer-driver-foo2zjs from repo - it won't work (I think some usb hot-plug related issues may exist, as enabling hot-plug using the alternative method started the printer)
+11. clone https://github.com/koenkooi/foo2zjs and install accoring to INSTALL instructions
+12. no need to run ./getweb P1006
+13. add printer in cups https://192.168.0.100:631/ using this https://www.tomshardware.com/how-to/raspberry-pi-print-server
+14. add network printer in windows, but not using automatic detection(!), but manually by providing url from cups (http, not https) e.g. http://192.168.0.100:631/printers/HP_LaserJet_P1006
+15. print :)
